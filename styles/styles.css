@@ -9,6 +9,8 @@
  * OF ANY KIND, either express or implied. See the License for the specific language
  * governing permissions and limitations under the License.
  */
+ @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,300&display=swap');
+
 
  :root {
   /* colors */
@@ -20,8 +22,8 @@
   --highlight-background-color: #ccc;
 
   /* fonts */
-  --heading-font-family: "Source Serif4 Light";
-  --body-font-family: "Source Serif4 Regular";
+  --heading-font-family: "Source Serif 4", serif;
+  --body-font-family: "Source Serif 4", serif;
   --fixed-font-family: "Roboto Mono", menlo, consolas, "Liberation Mono", monospace; 
 
   /* body sizes */
@@ -65,14 +67,19 @@ header {
 h1, h2, h3,
 h4, h5, h6 {
   font-family: var(--heading-font-family);
-  font-weight: 600;
+  font-weight: 300;
   line-height: 1.25;
   margin-top: 1em;
   margin-bottom: .5em;
   scroll-margin: calc(var(--nav-height) + 1em);
 }
 
-h1 { font-size: var(--heading-font-size-xxl) }
+h1 { 
+  font-size: var(--heading-font-size-xxl) ;
+  line-height: 120%;
+  font-style: normal;
+  font-weight: 300;
+}
 h2 { font-size: var(--heading-font-size-xl) }
 h3 { font-size: var(--heading-font-size-l) }
 h4 { font-size: var(--heading-font-size-m) }
@@ -109,7 +116,7 @@ pre {
 
 /* buttons */
 
-a.button:any-link, button {
+/* a.button:any-link, button {
   font-family: var(--body-font-family);
   display: inline-block;
   box-sizing: border-box;
@@ -128,6 +135,35 @@ a.button:any-link, button {
   text-overflow: ellipsis;
   border-radius: 30px;
 }
+
+*/
+
+a.button:any-link, button {
+  -webkit-text-size-adjust: 100%;
+  --minimum-supported-XS: 375px;
+  --minimum-supported-S: 480px;
+  --minimum-supported-M: 768px;
+  --minimum-supported-L: 992px;
+  --minimum-supported-XL: 1200px;
+  --XL: clamp(0,calc(999900vw - var(--minimum-supported-XL)*9999),1px);
+  --L: clamp(0,calc(999900vw - var(--minimum-supported-L)*9999),1px);
+  --M: clamp(0,calc(999900vw - var(--minimum-supported-M)*9999),1px);
+  --S: clamp(0,calc(999900vw - var(--minimum-supported-S)*9999),1px);
+  --XS: clamp(0,calc(999900vw - var(--minimum-supported-XS)*9999),1px);
+  cursor: pointer;
+  -webkit-box-direction: reverse;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  text-align: left;
+  font-family: Alliance Medium;
+  font-size: 16px;
+  letter-spacing: .16px;
+  line-height: 120%;
+  color: #90f;
+}
+
 
 a.button:hover, a.button:focus, button:hover, button:focus  {
   background-color: var(--link-hover-color);
@@ -236,4 +272,30 @@ main .section[data-section-status='initialized'] {
 
 main .section.highlight {
   background-color: var(--highlight-background-color);
+}
+
+
+/* Kunwar Changes */
+
+.section-top-grid > div > div:nth-child(1) img{
+  border-radius :90% 0 0;
+}
+
+.section-mid > div img{
+  width : auto;
+}
+
+.section-contactus
+{
+  text-align: center;
+  border: 0;
+  font-size: 100%;
+  padding: 0;
+  box-sizing: inherit;
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  background-color: #e7e2da;
+  max-width: 1120px;
+
 }
