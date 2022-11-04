@@ -20,9 +20,9 @@
   --highlight-background-color: #ccc;
 
   /* fonts */
-  --heading-font-family: "Source Serif 4", serif;
-  --body-font-family: "Source Serif 4", serif;
-  /* --body-font-family: "Alliance Light"; */ /*This font appears a paid one hence using the google font*/
+  --heading-font-family: "Source Serif4 Light";
+  /* --body-font-family: "Source Serif 4", serif; */
+   --body-font-family: "Alliance Light"; 
   --fixed-font-family: "Roboto Mono", menlo, consolas, "Liberation Mono", monospace; 
 
   /* body sizes */
