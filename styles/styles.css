@@ -9,6 +9,7 @@
  * OF ANY KIND, either express or implied. See the License for the specific language
  * governing permissions and limitations under the License.
  */
+ @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,300&display=swap');
 
  :root {
   /* colors */
@@ -21,7 +22,8 @@
 
   /* fonts */
   --heading-font-family: "Source Serif4 Light";
-  --body-font-family: "Source Serif4 Regular";
+  --body-font-family: "Source Serif4 Light"; 
+  /* --body-font-family: "Alliance Light"; */ /*This font appears a paid one hence using the google font*/
   --fixed-font-family: "Roboto Mono", menlo, consolas, "Liberation Mono", monospace; 
 
   /* body sizes */
@@ -65,7 +67,7 @@ header {
 h1, h2, h3,
 h4, h5, h6 {
   font-family: var(--heading-font-family);
-  font-weight: 600;
+  font-weight: 300;
   line-height: 1.25;
   margin-top: 1em;
   margin-bottom: .5em;
