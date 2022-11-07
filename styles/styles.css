@@ -21,7 +21,7 @@
 
   /* fonts */
   --heading-font-family: "Source Serif4 Light";
-  --body-font-family: "Source Serif4 Regular";
+   --body-font-family: "Alliance Light"; 
   --fixed-font-family: "Roboto Mono", menlo, consolas, "Liberation Mono", monospace; 
 
   /* body sizes */
@@ -65,7 +65,7 @@ header {
 h1, h2, h3,
 h4, h5, h6 {
   font-family: var(--heading-font-family);
-  font-weight: 600;
+  font-weight: 300;
   line-height: 1.25;
   margin-top: 1em;
   margin-bottom: .5em;
