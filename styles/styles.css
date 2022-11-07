@@ -297,5 +297,12 @@ main .section.highlight {
   width: 100%;
   background-color: #e7e2da;
   max-width: 1120px;
+}
 
+
+.section-news img{
+
+  border-radius: 0 90% 0 0;
+  height: auto;
+  max-width: 100%;
 }
