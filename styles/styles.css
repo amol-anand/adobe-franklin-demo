@@ -306,3 +306,25 @@ main .section.highlight {
   height: auto;
   max-width: 100%;
 }
+
+.footer-links 
+{
+  display: table;
+}
+
+.footer-links div
+{
+  float: left;
+  padding: 10px 25px;
+}
+
+
+
+
+
+
+
+
+
+
+
