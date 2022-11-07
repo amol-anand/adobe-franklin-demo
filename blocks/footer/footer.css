@@ -1,14 +1,100 @@
 footer {
-  padding: 2rem;
-  background-color: var(--overlay-background-color);
-  font-size: var(--body-font-size-s);
+  --footer-font-color: #fff;
+  background-color: #202020;
 }
 
 footer .footer {
-  max-width: 1200px;
-  margin: auto;
+  max-width: 70rem;
+  max-height: 36.75rem;
+  margin: 0 auto;
+  font-size: var(--body-font-size-s);
 }
 
-footer .footer p {
+footer .footer > div > div {
+  padding-top: 6rem;
+  padding-bottom: 2rem;
+}
+
+footer .footer-links>div:first-of-type{
+  display: flex;
+  border-bottom: 0.75px solid  #8B8883;
+}
+
+footer .footer-links>div>div:first-of-type{
+  width: 17.5rem;
+  margin-right: 1.625rem;
+}
+
+footer .footer-links>div>div{
+  width: 13.7875rem;
+  margin-right: 1.625rem;
+}
+
+footer .footer-links>div>div:last-of-type{
+  width: 6.825rem;
+}
+
+footer .footer-links > div > div> h4{
+  color: #8B8883;
+  font-size: 18px;
+  font-family: "Alliance Light",sans-serif;
+  margin-bottom: 24px;
+}
+
+footer .footer-links .icon{
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 50%;
+  text-align: center;
+}
+
+footer .footer-links .icon-email>svg{
+  margin: 0.48rem auto;
+}
+
+footer .footer-links .icon-linkedin>svg{
+  margin: 0.4rem auto;
+}
+footer .footer-links .icon-twitter{
+  margin-left: 21px;
+}
+
+footer .footer-links .icon-twitter>svg{
+  margin: 0.5rem auto;
+}
+
+footer .footer-links ul{
+  list-style: none;
   margin: 0;
+  padding: 0;
+}
+
+footer .footer-links ul li{
+  margin-bottom: 1.875rem;
+}
+
+footer .footer-links ul li a{
+  color: var(--footer-font-color);
+  font-family: "Alliance Regular", sans-serif;
+  font-size: 14px;
+}
+
+footer .footer-links+ul{
+  list-style: none;
+  display: flex;
+  padding-top: 2rem;
+  padding-left: 0;
+  justify-content: space-between;
+}
+
+footer .footer-links+ul>li{
+  color:var(--footer-font-color);
+  font-size: 16px;
+}
+
+footer .footer-links+ul>li a{
+  color:var(--footer-font-color);
 }
