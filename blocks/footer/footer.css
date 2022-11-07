@@ -1,5 +1,7 @@
+
 footer {
   --footer-font-color: #fff;
+  
   background-color: #202020;
 }
 
@@ -10,23 +12,23 @@ footer .footer {
   font-size: var(--body-font-size-s);
 }
 
+footer .footer-links>div{
+  display: flex;
+  border-bottom: 0.75px solid  #8B8883;
+}
+
 footer .footer > div > div {
   padding-top: 6rem;
   padding-bottom: 2rem;
 }
 
-footer .footer-links>div:first-of-type{
-  display: flex;
-  border-bottom: 0.75px solid  #8B8883;
+footer .footer-links>div>div{
+  width: 13.7875rem;
+  margin-right: 1.625rem;
 }
 
 footer .footer-links>div>div:first-of-type{
   width: 17.5rem;
-  margin-right: 1.625rem;
-}
-
-footer .footer-links>div>div{
-  width: 13.7875rem;
   margin-right: 1.625rem;
 }
 
@@ -58,6 +60,7 @@ footer .footer-links .icon-email>svg{
 footer .footer-links .icon-linkedin>svg{
   margin: 0.4rem auto;
 }
+
 footer .footer-links .icon-twitter{
   margin-left: 21px;
 }
