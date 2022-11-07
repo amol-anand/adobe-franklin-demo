@@ -69,7 +69,8 @@
     display:inline-block;    
     background: none;   
     text-align: left;
-    padding-left: 0;    
+    padding-left: 0; 
+    text-decoration: none;   
 } 
 
 .newscard .newscard-card-body a::after{
