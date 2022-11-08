@@ -262,6 +262,7 @@ main .section-bottom .columns-2-cols h1{
   -webkit-text-fill-color: transparent;
   background: linear-gradient(270deg,#fa1e32,#90f);
   background-clip: text;
+  -webkit-background-clip: text;
   display: inline-block;
   font-size: 128px;
   line-height: 154px;
