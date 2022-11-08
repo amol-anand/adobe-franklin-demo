@@ -1,18 +1,36 @@
 /* header and nav layout */
+header {
+  position: fixed;
+  float: left;
+  clear: none;
+  border-bottom: 1.5px solid #e6e6e6;
+  width: 100%;
+  background-color: var(--background-color);
+  left: 0;
+  top: 0;
+  transition: all .5s ease;
+  z-index: 99999;
+  font-family: var(--header-font-family);
+}
+
+.header.block {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+}
+
 header nav {
   display: grid;
   grid-template:
     'hamburger brand tools' var(--nav-height)
     'sections sections sections' 1fr / 50px 1fr 50px;
   align-items: center;
-  padding: 0 2rem;
+  justify-content: center;
   position: fixed;
   z-index: 1;
-  background-color: var(--background-color);
   width: 100vw;
   height: var(--nav-height);
   box-sizing: border-box;
-  font-family: var(--body-font-family);
 }
 
 header nav a:any-link {
@@ -27,11 +45,16 @@ header nav[aria-expanded='true'] {
 }
 
 /* brand */
-header .nav-brand {
+/* header .nav-brand {
   grid-area: brand;
   font-size: 22px;
   font-weight: 700;
   line-height: 1em;
+} */
+
+header nav .nav-brand {
+  display: flex;
+  align-items: center;
 }
 
 header nav .nav-brand p {
@@ -39,8 +62,8 @@ header nav .nav-brand p {
 }
 
 header nav .nav-brand img {
-  width: 128px;
-  height: auto;
+  width: 100%;
+  height: 56px;
 }
 
 /* hamburger */
@@ -157,16 +180,36 @@ header nav[aria-expanded='true'] .nav-tools li {
 
 /* desktop nav styles */
 @media (min-width: 1000px) {
+  header {
+    padding: 37px 0 0;
+  }
+
+  .header.block {
+    max-width: 1120px;
+  }
+
   header nav {
     display: flex;
     justify-content: space-between;
     height: var(--nav-height);
     padding: 16px 2rem;
+    max-width: 1120px;
   }
 
+  header nav .nav-brand {
+    margin-right: 80px;
+    padding: 0 0 37px;
+    width: auto;
+  }
+  
   header nav .nav-sections > ul > li.nav-drop {
     position: relative;
-    padding-right: 32px;
+    padding-right: 27px;
+    padding-left: 0px;
+  }
+
+  header nav .nav-sections > ul > li.nav-drop > span.icon-arrow-down-black{
+    margin-left: 16px;
   }
 
   header nav .nav-drop::after {
@@ -210,7 +253,7 @@ header nav[aria-expanded='true'] .nav-tools li {
   header nav .nav-sections > ul > li {
     padding: 0 16px;
     position: relative;
-    font-size: 16px;
+    font-size: 18px;
     margin: 0;
     cursor: pointer;
     padding-top: 0;
@@ -256,5 +299,18 @@ header nav[aria-expanded='true'] .nav-tools li {
     left: 0;
     padding: 16px;
     box-shadow: 0 0 5px var(text-color);
+  }
+
+  /* Tools */
+  header nav .nav-tools p {
+    font-size: 18px;
+  }
+
+  header nav .nav-tools p a:link {
+    text-decoration: none;
+  }
+
+  header nav .nav-tools p .icon {
+    margin-left: 16px;
   }
 }

@@ -15,12 +15,13 @@
   --text-color: #20201f;
   --link-color: #00e;
   --link-hover-color: #00e;
-  --background-color: #fff;
+  --background-color: #faf8f6;
   --overlay-background-color: #eee;
   --highlight-background-color: #ccc;
 
   /* fonts */
   --heading-font-family: "Source Serif4 Light", sans-serif;
+  --header-font-family: "Alliance SemiBold", sans-serif;
   --body-font-family: "Alliance Light", sans-serif; 
   --fixed-font-family: "Roboto Mono", menlo, consolas, "Liberation Mono", monospace; 
 
