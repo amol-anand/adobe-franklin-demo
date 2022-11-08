@@ -1,37 +1,4 @@
 /* below the fold CSS goes here */
-
-/* || Source Serif4 Font Family  */
-@font-face {
-  font-family: "Source Serif4 Light";
-  src: url("/styles/fonts/SourceSerif4/SourceSerif4-Light.woff2") format("woff2");
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Source Serif4 Regular";
-  src: url("/styles/fonts/SourceSerif4/SourceSerif4-Regular.woff2") format("woff2");
-  font-display: swap;
-}
-
-/* || Alliance Font Family  */
-@font-face {
-  font-family: "Alliance Light";
-  src: url("/styles/fonts/Alliance/AllianceNo.1-Light.woff2") format("woff2");
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Alliance Regular";
-  src: url("/styles/fonts/Alliance/AllianceNo.1-Regular.woff2") format("woff2");
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Alliance Medium";
-  src: url("/styles/fonts/Alliance/AllianceNo.1-Medium.woff2") format("woff2");
-  font-display: swap;
-}
-
 main .cmp-modal {
   display: none;
   position: relative;
@@ -58,7 +25,6 @@ main .cmp-modal--container {
   overflow: auto;
   position: fixed;
   top: 30%;
-  -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   z-index: 1;
 }
@@ -68,7 +34,7 @@ main .cmp-modal--heading {
 }
 
 main .cmp-modal--heading .close {
-  background: url(../icons/close-button.svg) no-repeat;
+  background: url('../icons/close-button.svg') no-repeat;
   border: 0;
   cursor: pointer;
   height: 40px;
