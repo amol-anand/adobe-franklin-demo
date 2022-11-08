@@ -114,6 +114,7 @@ function loadDelayed() {
   window.setTimeout(() => import('./delayed.js'), 3000);
   // load anything that can be postponed to the latest here
   window.setTimeout(() => import('./modal.js'), 500);
+  window.setTimeout(() => loadCSS(`${window.hlx.codeBasePath}/styles/delayed-styles.css`), 500);
 }
 
 async function loadPage() {

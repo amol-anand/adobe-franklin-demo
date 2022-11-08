@@ -64,7 +64,6 @@ main .cmp-modal--container {
   overflow: auto;
   position: fixed;
   top: 30%;
-  -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   z-index: 1;
 }
@@ -74,7 +73,7 @@ main .cmp-modal--heading {
 }
 
 main .cmp-modal--heading .close {
-  background: url(../icons/close-button.svg) no-repeat;
+  background: url('../icons/close-button.svg') no-repeat;
   border: 0;
   cursor: pointer;
   height: 40px;

@@ -1,4 +1,10 @@
 (() => {
+  const hideModal = () => {
+    const modal = document.querySelector('.cmp-modal.active');
+    modal.querySelector('video').pause();
+    modal.classList.toggle('active');
+  };
+
   const displayModal = (e) => {
     const modal = e.detail.modalEle;
     const close = modal.querySelector('.close');
@@ -11,13 +17,7 @@
     const video = modal.querySelector('video');
     video.muted = false;
     video.load();
-  }
-
-  const hideModal = () => {
-    const modal = document.querySelector('.cmp-modal.active');
-    modal.querySelector('video').pause();
-    modal.classList.toggle('active');
-  }
+  };
 
   document.addEventListener('launchVideo', displayModal);
 })();
