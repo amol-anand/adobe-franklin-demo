@@ -14,25 +14,26 @@ footer .footer {
 
 footer .footer-links>div{
   display: flex;
-  border-bottom: 0.75px solid  #8B8883;
+  padding-bottom: 1.5rem;
+  border-bottom: 0.1px solid  #636161;
 }
 
 footer .footer > div > div {
   padding-top: 6rem;
-  padding-bottom: 2rem;
+  padding-bottom: 3rem;
 }
 
-footer .footer-links>div>div{
+footer .footer-links > div > div{
   width: 13.7875rem;
   margin-right: 1.625rem;
 }
 
-footer .footer-links>div>div:first-of-type{
+footer .footer-links > div > div:first-of-type{
   width: 17.5rem;
   margin-right: 1.625rem;
 }
 
-footer .footer-links>div>div:last-of-type{
+footer .footer-links >div >div:last-of-type{
   width: 6.825rem;
 }
 
@@ -43,7 +44,7 @@ footer .footer-links > div > div> h4{
   margin-bottom: 24px;
 }
 
-footer .footer-links .icon{
+footer .footer-links .icon {
   width: 40px;
   height: 40px;
   background-color: #fff;
@@ -53,22 +54,58 @@ footer .footer-links .icon{
   text-align: center;
 }
 
-footer .footer-links .icon-email>svg{
+footer .footer-links .icon:hover{
+  background: linear-gradient(270deg, rgb(250 30 50), rgb(153 0 255));
+}
+
+footer .footer-links .icon-footer-logo {
+  border-radius: 0%;
+  background-color: #202020;
+  font-family: "Source Serif4 Regular", sans-serif;
+  font-size: 16px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+footer .footer-links .icon-footer-logo > svg{
+  height: 56px;
+  width: 158.06px;
+}
+
+footer .footer-links .icon-email > svg{
   margin: 0.48rem auto;
 }
 
-footer .footer-links .icon-linkedin>svg{
+footer .footer-links .icon-linkedin > svg{
   margin: 0.4rem auto;
+  width: 20px;
+  height: 20px;
 }
 
 footer .footer-links .icon-twitter{
   margin-left: 21px;
+  vertical-align: middle;
 }
 
-footer .footer-links .icon-twitter>svg{
+footer .footer-links .icon-twitter > svg{
   margin: 0.5rem auto;
+  width: 20px;
+  height: 20px;
 }
 
+footer .footer-links .icon:hover svg{
+  filter: invert(100%);
+}
+
+footer .footer-links .icon-footer-logo:hover {
+  background: none;
+}
+
+footer .footer-links .icon-footer-logo:hover svg{
+  filter: none;
+}
+
+/* styles for the lower section links */
 footer .footer-links ul{
   list-style: none;
   margin: 0;
@@ -88,16 +125,23 @@ footer .footer-links ul li a{
 footer .footer-links+ul{
   list-style: none;
   display: flex;
-  padding-top: 2rem;
+  padding-top: 1rem;
   padding-left: 0;
   justify-content: space-between;
 }
 
-footer .footer-links+ul>li{
+footer .footer-links+ul li{
   color:var(--footer-font-color);
   font-size: 16px;
+}
+
+footer .footer-links+ul>li:first-of-type{
+  font-weight: 400;
+  width: 480px;
 }
 
 footer .footer-links+ul>li a{
   color:var(--footer-font-color);
 }
+
+/* end styles for lower section */
