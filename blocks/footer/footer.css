@@ -42,6 +42,7 @@ footer .footer-links > div > div> h4{
   font-size: 18px;
   font-family: "Alliance Light",sans-serif;
   margin-bottom: 24px;
+  font-weight: 300;
 }
 
 footer .footer-links .icon {
@@ -84,7 +85,6 @@ footer .footer-links .icon-linkedin > svg{
 
 footer .footer-links .icon-twitter{
   margin-left: 21px;
-  vertical-align: middle;
 }
 
 footer .footer-links .icon-twitter > svg{
