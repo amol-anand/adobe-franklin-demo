@@ -37,7 +37,6 @@ export default async function decorate(block) {
         <track src="" kind="subtitles" srcLang="en" label="English">
         Your browser does not support the video tag.
       </video>
-      <!-- <img class="cmp-hero-variation-video-placeholder" src="${cfg.placeholder}" alt="${cfg.name}" data-gif="${cfg.gif}"/> -->
     </div>
     <div class="button cmp-button-play-primary cmp-button-launch-video">
       <button type="button" class="cmp-button" aria-label="Play Video" data-cmp-clickable="">
