@@ -31,12 +31,13 @@ export default async function decorate(block) {
   video.classList.add('col', 'col-left');
   video.innerHTML = `
     <div class="col-image image-clip-left">
-      <video autoPlay="" playsInline="" loop="" preload="auto" muted="" class="cmp-hero-variation-video gif">
+     <video autoPlay="" playsInline="" loop="" preload="auto" muted="" class="cmp-hero-variation-video gif">
         <source data-label="${cfg.name}" data-title="${cfg.name}"
                 src="${cfg.gif}" type="video/mp4">
         <track src="" kind="subtitles" srcLang="en" label="English">
         Your browser does not support the video tag.
       </video>
+      <!-- <img class="cmp-hero-variation-video-placeholder" src="${cfg.placeholder}" alt="${cfg.name}" data-gif="${cfg.gif}"/> -->
     </div>
     <div class="button cmp-button-play-primary cmp-button-launch-video">
       <button type="button" class="cmp-button" aria-label="Play Video" data-cmp-clickable="">
