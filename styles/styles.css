@@ -58,17 +58,16 @@ a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, bo
   padding: 0;
 }
 
+/* stylelint-disable property-no-vendor-prefix */
 [type=reset], [type=submit], button, html [type=button] {
   -webkit-appearance: button;
 }
 
 html {
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-html *, html :before, html :after {
-  -webkit-box-sizing: inherit;
+html *, html ::before, html ::after {
   box-sizing: inherit;
 }
 
@@ -80,16 +79,17 @@ body {
   color: var(--text-color);
   background-color: var(--background-color);
   display: none;
-  --minimum-supported-XS: 375px;
-  --minimum-supported-S: 480px;
-  --minimum-supported-M: 768px;
-  --minimum-supported-L: 992px;
-  --minimum-supported-XL: 1200px;
-  --XL: clamp(0, calc(999900vw - var(--minimum-supported-XL) * 9999), 1px);
-  --L: clamp(0, calc(999900vw - var(--minimum-supported-L) * 9999), 1px);
-  --M: clamp(0, calc(999900vw - var(--minimum-supported-M) * 9999), 1px);
-  --S: clamp(0, calc(999900vw - var(--minimum-supported-S) * 9999), 1px);
-  --XS: clamp(0, calc(999900vw - var(--minimum-supported-XS) * 9999), 1px);
+
+  --minimum-supported-xs: 375px;
+  --minimum-supported-s: 480px;
+  --minimum-supported-m: 768px;
+  --minimum-supported-l: 992px;
+  --minimum-supported-xl: 1200px;
+  --xl: clamp(0, calc(999900vw - var(--minimum-supported-xl) * 9999), 1px);
+  --l: clamp(0, calc(999900vw - var(--minimum-supported-l) * 9999), 1px);
+  --m: clamp(0, calc(999900vw - var(--minimum-supported-m) * 9999), 1px);
+  --s: clamp(0, calc(999900vw - var(--minimum-supported-s) * 9999), 1px);
+  --xs: clamp(0, calc(999900vw - var(--minimum-supported-xs) * 9999), 1px);
 }
 
 body.appear {
@@ -161,84 +161,62 @@ main .section-top-grid > div > div:nth-child(even) img{
 }
 
 main .cmp-button {
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   background: transparent;
   border: 0;
   border-radius: 40px;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   cursor: pointer;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: reverse;
-  -ms-flex-direction: row-reverse;
   flex-direction: row-reverse;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
   justify-content: space-between;
   max-height: 62px;
   padding: 25px;
   width: 240px
 }
 
-main .cmp-button__text {
-  font-family: "Alliance Medium";
+main .cmp-button-text {
+  font-family: "Alliance Medium", sans-serif;
   font-size: 16px;
   letter-spacing: .16px;
   line-height: 120%;
-  color: #ffffff;
+  color: #fff;
   text-align: left;
 }
 
-main .cmp-button__icon {
-  background: url(../icons/arrow-white.svg) no-repeat transparent;
+main .cmp-button-icon {
+  background: url('../icons/arrow-white.svg') no-repeat transparent;
   background-size: contain;
   height: 22px;
   width: 22px
 }
 
-main .cmp-button__icon--play {
-  background-image: url(../icons/play-button.svg)
+main .cmp-button-icon-play {
+  background-image: url('../icons/play-button.svg')
 }
 
-main .cmp-button--play .cmp-button {
+main .cmp-button-play .cmp-button {
   background-color: #90f;
   border-radius: 50%;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
   flex-direction: row;
   height: 124px;
   max-height: unset;
-  -webkit-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out;
   width: 124px
 }
 
-main .cmp-button--play .cmp-button, .cmp-button--play .cmp-button__details {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
+main .cmp-button-play .cmp-button, .cmp-button-play .cmp-button-details {
   display: inline-flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center
 }
 
-main .cmp-button--play .cmp-button__details {
-  -webkit-box-align: center;
-  -ms-flex-align: center;
+main .cmp-button-play .cmp-button-details {
   align-items: center;
-  -webkit-box-direction: reverse;
-  -ms-flex-direction: row-reverse;
   flex-direction: row-reverse
 }
 
-main .cmp-button--play .cmp-button__details .cmp-button__text {
-  font-family: "Alliance Medium";
+main .cmp-button-play .cmp-button-details .cmp-button-text {
+  font-family: "Alliance Medium", sans-serif;
   font-size: 16px;
   letter-spacing: .16px;
   line-height: 120%;
@@ -248,24 +226,15 @@ main .cmp-button--play .cmp-button__details .cmp-button__text {
   top: -1px
 }
 
-main .cmp-button--play .cmp-button__icon {
+main .cmp-button-play .cmp-button-icon {
   height: 23px;
   position: relative;
   top: 5px;
   width: 15px
 }
 
-main .cmp-button--play .cmp-button:active,
-main .cmp-button--play .cmp-button:hover {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#fa1e32), to(#90f));
-  background-image: linear-gradient(180deg, #fa1e32, #90f)
-}
-
-main .cmp-button--play-primary .cmp-button {
+main .cmp-button-play-primary .cmp-button {
   background-color: #20201f;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
   flex-direction: row;
   height: 66px;
   max-height: unset;
@@ -273,24 +242,15 @@ main .cmp-button--play-primary .cmp-button {
   padding-right: 0
 }
 
-main .cmp-button--play-primary .cmp-button__details {
-  -webkit-box-align: start;
-  -ms-flex-align: start;
+main .cmp-button-play-primary .cmp-button-details {
   align-items: flex-start;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center
 }
 
-main .cmp-button--play-primary .cmp-button__details .cmp-button__duration {
-  font-family: Alliance Light;
+main .cmp-button-play-primary .cmp-button-details .cmp-button-duration {
+  font-family: var(--body-font-family);
   font-size: 12px;
   letter-spacing: .16px;
   line-height: 160%;
@@ -298,7 +258,7 @@ main .cmp-button--play-primary .cmp-button__details .cmp-button__duration {
   font-weight: 300
 }
 
-main .cmp-button--play-primary .cmp-button__icon {
+main .cmp-button-play-primary .cmp-button-icon {
   background-color: #90f;
   background-position: 55% 50%;
   background-size: 14px;
@@ -307,81 +267,74 @@ main .cmp-button--play-primary .cmp-button__icon {
   width: 66px
 }
 
-main .cmp-button--play-primary .cmp-button:active .cmp-button__icon,
-main .cmp-button--play-primary .cmp-button:hover .cmp-button__icon {
-  background: url(../icons/play-button.svg) no-repeat, -webkit-gradient(linear, left top, left bottom, from(#fa1e32), to(#90f));
-  background: url(../icons/play-button.svg) no-repeat, linear-gradient(180deg, #fa1e32, #90f);
+main .cmp-button-play-primary .cmp-button:active .cmp-button-icon,
+main .cmp-button-play-primary .cmp-button:hover .cmp-button-icon {
+  background: url('../icons/play-button.svg') no-repeat, linear-gradient(180deg, #fa1e32, #90f);
   background-position: 55% 50%
 }
 
-main .cmp-button--pause .cmp-button {
+main .cmp-button-pause .cmp-button {
   border: 2px solid #fff;
   border-radius: 50%;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
   display: inline-flex;
   height: 67px;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
   padding: 0;
   width: 67.73px;
 }
 
-main .cmp-button--pause .cmp-button:active,
-main .cmp-button--pause .cmp-button:hover {
-  background-image: -webkit-gradient(linear, right top, left top, from(#fa1e32), to(#90f));
-  background-image: linear-gradient(270deg, #fa1e32, #90f);
-  border: 0;
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out
-}
 
-main .cmp-button--pause .cmp-button__icon--arrow {
-  background-image: url(../icons/pause.svg);
+main .cmp-button-pause .cmp-button-icon-arrow {
+  background-image: url('../icons/pause.svg');
   background-repeat: space;
   background-size: 35%;
   height: 19.17px;
   width: 13px;
 }
 
-main .cmp-button--playbtn .cmp-button {
+main .cmp-button-playbtn .cmp-button {
   border: 2px solid #fff;
   border-radius: 50%;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
   display: inline-flex;
   height: 67px;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
   max-height: 67px !important;
   padding: 0;
   width: 67.73px;
 }
 
-main .cmp-button--playbtn .cmp-button:active,
-main .cmp-button--playbtn .cmp-button:hover {
-  background-image: -webkit-gradient(linear, right top, left top, from(#fa1e32), to(#90f));
-  background-image: linear-gradient(270deg, #fa1e32, #90f);
-  border: 0;
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out
-}
-
-main .cmp-button--playbtn .cmp-button__icon--arrow {
-  background-image: url(../icons/play-button.svg);
+main .cmp-button-playbtn .cmp-button-icon-arrow {
+  background-image: url('../icons/play-button.svg');
   background-repeat: space;
   height: 23px;
   margin-left: 5px;
   width: 15px;
 }
 
-main .cmp-button--purple .cmp-button {
+main .cmp-button-purple .cmp-button {
   background-color: #ebccff
 }
 
-main .cmp-button--purple .cmp-button .cmp-button__duration,
-main .cmp-button--purple .cmp-button .cmp-button__text {
+main .cmp-button-purple .cmp-button .cmp-button-duration,
+main .cmp-button-purple .cmp-button .cmp-button-text {
   color: #000
+}
+
+main .cmp-button-play .cmp-button:active,
+main .cmp-button-play .cmp-button:hover {
+  background-image: linear-gradient(180deg, #fa1e32, #90f)
+}
+
+main .cmp-button-pause .cmp-button:active,
+main .cmp-button-pause .cmp-button:hover {
+  background-image: linear-gradient(270deg, #fa1e32, #90f);
+  border: 0;
+  transition: all .2s ease-in-out
+}
+
+main .cmp-button-playbtn .cmp-button:active,
+main .cmp-button-playbtn .cmp-button:hover {
+  background-image: linear-gradient(270deg, #fa1e32, #90f);
+  border: 0;
+  transition: all .2s ease-in-out
 }
