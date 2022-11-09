@@ -1,5 +1,5 @@
-# Your Project's Title...
-Your project's description...
+# Adobe Franklin Demo
+Demo to showcase Adobe Franklin
 
 ## Environments
 - Preview: https://main--{repo}--{owner}.hlx.page/
