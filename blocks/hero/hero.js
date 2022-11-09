@@ -32,7 +32,7 @@ export default async function decorate(block) {
   video.innerHTML = `
     <div class="col-image image-clip-left">
       <video autoPlay="" playsInline="" loop="" preload="auto" muted="" class="cmp-hero-variation-video gif">
-        <source data-label="${cfg.name}" data-title="Merative_FINAL_R1_high.mp4"
+        <source data-label="${cfg.name}" data-title="${cfg.name}"
                 src="${cfg.gif}" type="video/mp4">
         <track src="" kind="subtitles" srcLang="en" label="English">
         Your browser does not support the video tag.
@@ -69,7 +69,7 @@ export default async function decorate(block) {
         </div>
         <div class="cmp-modal-content">
           <video class="cmp-modal-video" autoPlay="" controls="" muted="" playsInline="" loop="" preload="auto">
-            <source data-label="${cfg.name}" data-title="Merative_FINAL_R1_high.mp4"
+            <source data-label="${cfg.name}" data-title="${cfg.name}"
                     src="${cfg.video}" type="video/mp4">
             <track src="" kind="subtitles" srcLang="en" label="English">
             Your browser does not support the video tag.
