@@ -148,6 +148,9 @@ a.button.secondary, button.secondary {
   color: var(--text-color)
 } 
 
+main {
+  margin-top: var(--nav-height-mobile);
+}
 
 main input {
   font-size: 1.25rem;
