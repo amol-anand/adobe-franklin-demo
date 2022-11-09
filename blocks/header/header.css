@@ -184,6 +184,7 @@ header nav .nav-sections>ul>li {
     background: url('../../icons/arrow-down-white.svg') no-repeat right center;
   }
 
+  header nav .nav-sections .nav-drop[aria-expanded='false'] .section-heading:hover,
   header nav .nav-sections .nav-drop[aria-expanded='true'] .section-heading {
     display: unset;
     border-bottom-style: solid;
