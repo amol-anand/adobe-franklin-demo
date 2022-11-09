@@ -277,6 +277,7 @@ header nav .nav-sections>ul>li {
     display: flex;
     justify-content: space-between;
     height: var(--nav-height-mobile);
+    max-height: none;
     max-width: 1119px;
     width: 100vw;
     padding-left: 10%; 
@@ -384,5 +385,29 @@ header nav .nav-sections>ul>li {
     height: 16px;
     top: 50%;
     right: 5%;
+  }
+  header nav[aria-expanded='true'] .nav-sections > ul > li.nav-drop[aria-expanded='true'] > ul {
+    display: block;
+    position: relative;
+  }
+
+  header nav[aria-expanded='true'] .nav-sections > ul > li.nav-drop[aria-expanded='true'] > ul > li.level-two {
+    text-align: left;
+    font-size: 1.125rem;
+    padding: 3%;
+  }
+
+  header nav[aria-expanded='true'] .nav-sections > ul > li.nav-drop[aria-expanded='true'] > ul > li.level-two:not(:last-child) {
+    border-bottom: 1px solid #e6e6e6;
+  }
+
+  header nav[aria-expanded='true'] .nav-sections > ul > li.nav-drop[aria-expanded='true'] > ul > li.level-two > a {
+    text-decoration: none;
+    padding-right: 4%;
+    background: url('../../icons/arrow-purple.svg') no-repeat right;
+  }
+
+  header nav[aria-expanded='true'] .nav-sections > ul > li.nav-drop[aria-expanded='true'] > ul > li.level-two > ul {
+    display: none;
   }
 }
