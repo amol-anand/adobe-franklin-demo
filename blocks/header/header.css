@@ -220,15 +220,15 @@ header nav .nav-sections>ul>li {
   }
 
   header nav .nav-sections>ul>li[aria-expanded='true']>ul {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 20%);
+    grid-template-rows: auto auto auto auto auto auto;
+    gap: 50px 100px;
     justify-content: center;
     position: fixed;
     left: 0;
     padding-top: 3%;
     top: calc(var(--nav-height) + 37px);
-    right: 100%;
-    bottom: 100%;
     margin: 0;
     background-color: white;
     color: var(--text-color);
@@ -237,8 +237,6 @@ header nav .nav-sections>ul>li {
     width: 100vw;
     text-align: center;
     justify-items: center;
-    animation: fadeIn .25s;
-    animation-fill-mode: forwards;
     overflow: hidden;
     z-index: -1;
   }
