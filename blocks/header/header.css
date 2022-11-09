@@ -47,7 +47,7 @@ header nav .nav-brand p {
 
 header nav .nav-brand img {
   width: 100%;
-  height: 56px;
+  height: auto;
 }
 
 /* sections */
@@ -293,7 +293,7 @@ header nav .nav-sections>ul>li {
 
   header nav .nav-brand img {
     height: 45px;
-    width: 100%;
+    width: auto;
   }
 
   /* set sections and tools to off for now */
@@ -329,7 +329,7 @@ header nav .nav-sections>ul>li {
     justify-content: center;
     position: fixed;
     left: 0;
-    top: calc(var(--nav-height-mobile) + 2px);
+    top: calc(var(--nav-height-mobile) + 1px);
     right: 100%;
     bottom: 100%;
     margin: 0;
