@@ -258,12 +258,12 @@ main .section-bottom .columns-2-cols h1{
   font-weight: 300;
   font-family: var(--body-font-family);
   -webkit-text-fill-color: transparent;
-  background: var(--linear-gradient);
+  background: linear-gradient(270deg,#fa1e32,#90f);
   background-clip: text;
   -webkit-background-clip: text;  /* stylelint-disable property-no-vendor-prefix */
   font-size: 128px;
   border-image-slice: 1;
-  border-image-source: var(--linear-gradient);
+  border-image-source: linear-gradient(270deg,#fa1e32,#90f);
   border-top: 1px solid #e7e2da;
 }
 
@@ -310,6 +310,6 @@ main .section-top > div{
 main .section-bottom-grid p picture{
   display: block;
   border-image-slice: 1;
-  border-image-source: var(--linear-gradient);
+  border-image-source: linear-gradient(270deg,#fa1e32,#90f);
   border-bottom: 1px solid #e7e2da;
 }
