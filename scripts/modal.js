@@ -8,7 +8,7 @@
   const displayModal = (e) => {
     const modal = e.detail.modalEle;
     const close = modal.querySelector('.close');
-    const backdrop = modal.querySelector('.cmp-modal--backdrop');
+    const backdrop = modal.querySelector('.cmp-modal-backdrop');
 
     close.addEventListener('click', hideModal);
     backdrop.addEventListener('click', hideModal);
