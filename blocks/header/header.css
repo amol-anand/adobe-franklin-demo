@@ -368,7 +368,7 @@ header nav .nav-sections>ul>li {
     position: relative;
   }
 
-  header nav[aria-expanded='true'] .nav-sections>ul>li.nav-drop[aria-expanded='false']>div.section-heading::before {
+  header nav[aria-expanded='true'] .nav-sections>ul>li.nav-drop>div.section-heading::before {
     content: '';
     position: absolute;
     width: 17px;
