@@ -445,7 +445,7 @@ main .section-bottom .columns-2-cols h1{
   -webkit-text-fill-color: transparent;
   background: var(--linear-gradient);
   background-clip: text;
-  -webkit-background-clip: text;  /* stylelint-disable property-no-vendor-prefix */
+  -webkit-background-clip: text;
   font-size: 128px;
   border-image-slice: 1;
   border-image-source: var(--linear-gradient);
