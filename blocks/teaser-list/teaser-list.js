@@ -11,7 +11,7 @@ function createCard(row, style) {
 
   const title = document.createElement('div');
   title.classList.add('teaser-title');
-  title.innerHTML = `<h3>${row.title}</h3>`;
+  title.innerHTML = `<h6>${row.title}</h6>`;
 
   const description = document.createElement('div');
   description.classList.add('teaser-description');
