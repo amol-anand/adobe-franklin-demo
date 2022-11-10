@@ -14,8 +14,18 @@ function hideActive(sectionLinks) {
   });
 }
 
+function resetActive() {
+  const activeSections = document.querySelectorAll('.footer-links .active');
+  activeSections.forEach((activeSection) => {
+    activeSection.classList.remove('active');
+  });
+}
+
 function showLinks(e) {
   const sectionLinks = e.target.nextElementSibling;
+  const sectionHeading = e.target;
+  sectionHeading.classList.remove('fold');
+  sectionHeading.classList.add('unfold');
   hideActive(sectionLinks);
   sectionLinks.classList.toggle('active');
 }
@@ -25,6 +35,25 @@ function addLink() {
   const link = 'https://www.merative.com/contact';
   window.open(link, '_self');
 }
+
+function buildMobileFooter() {
+  // adding the folding behavior to links in the footer
+  const mediaQuery = window.matchMedia('(max-width: 667px)');
+  if (mediaQuery.matches) {
+    const linkHeadings = document.querySelectorAll('.footer-links .link-section-heading');
+    linkHeadings.forEach((linkHeading) => {
+      if (linkHeading.id !== 'contact-us') {
+        linkHeading.classList.add('fold');
+        linkHeading.addEventListener('click', showLinks);
+      } else {
+        linkHeading.addEventListener('click', addLink);
+      }
+    });
+  } else {
+    resetActive();
+  }
+}
+
 
 export default async function decorate(block) {
   const cfg = readBlockConfig(block);
@@ -40,12 +69,8 @@ export default async function decorate(block) {
   footer.innerHTML = modifiedhtml;
   await decorateIcons(footer);
   block.append(footer);
-  const linkHeadings = document.querySelectorAll('.footer-links .link-section-heading');
-  linkHeadings.forEach((linkHeading) => {
-    if (linkHeading.id !== 'contact-us') {
-      linkHeading.addEventListener('click', showLinks);
-    } else {
-      linkHeading.addEventListener('click', addLink);
-    }
-  });
+
+  window.addEventListener('resize', buildMobileFooter);
+
+  
 }

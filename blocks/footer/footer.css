@@ -151,7 +151,7 @@
 
   /* Media queries */
 
-  @media screen and (max-width: 660px){
+  @media screen and (max-width: 667px){
     footer .footer{
       margin-bottom: 0;
       max-height: fit-content;
@@ -196,12 +196,17 @@
       margin-top: 22px;
       margin-bottom: 24px;
       font-weight: 300;
-      background: url('../../icons/arrow-down-black.svg') no-repeat right center;
+   }
+   
+   footer .footer-links .fold {
+      background: url('../../icons/arrow-up-white.svg') no-repeat right center;
+   }
 
+   footer .footer-links .unfold {
+      background: url('../../icons/arrow-up-white.svg') no-repeat right center;
    }
 
    footer .footer-links #follow-us , 
-   footer .footer-links #follow-us > p,
    footer .footer-links #contact-us > p {
     display: none;
   }
@@ -254,8 +259,25 @@
     width: 127px;
   }
 
-  footer .footer-links .icon-email, footer .footer-links .icon-linkedin , footer .footer-links .icon-twitter {
+  footer .footer-links .icon-email {
     display: none;
+  }
+
+
+  footer .footer-links .icon-linkedin {
+    position: fixed;
+    bottom: 35px;
+    right: 20px;
+    width: 35px;
+    height: 35px;
+  }
+
+  footer .footer-links .icon-twitter {
+    position: fixed;
+    bottom: 35px;
+    right: 70px;
+    width: 35px;
+    height: 35px;
   }
 
   }
