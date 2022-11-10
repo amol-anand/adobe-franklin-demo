@@ -23,9 +23,6 @@ function resetActive() {
 
 function showLinks(e) {
   const sectionLinks = e.target.nextElementSibling;
-  const sectionHeading = e.target;
-  sectionHeading.classList.remove('fold');
-  sectionHeading.classList.add('unfold');
   hideActive(sectionLinks);
   sectionLinks.classList.toggle('active');
 }
@@ -71,6 +68,4 @@ export default async function decorate(block) {
   block.append(footer);
 
   window.addEventListener('resize', buildMobileFooter);
-
-  
 }

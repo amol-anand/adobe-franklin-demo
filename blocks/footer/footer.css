@@ -195,16 +195,9 @@
       margin-top: 22px;
       margin-bottom: 24px;
       font-weight: 300;
+      background: url('../../icons/arrow-down-white.svg') no-repeat right center;
    }
    
-   footer .footer-links .fold {
-      background: url('../../icons/arrow-up-white.svg') no-repeat right center;
-   }
-
-   footer .footer-links .unfold {
-      background: url('../../icons/arrow-up-white.svg') no-repeat right center;
-   }
-
    footer .footer-links #follow-us , 
    footer .footer-links #contact-us > p {
     display: none;
