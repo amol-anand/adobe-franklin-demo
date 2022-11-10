@@ -45,6 +45,10 @@
   --nav-height: 93px;
   --nav-height-mobile: 93px;
   --nav-height-mobile-section: 95px;
+  --sticky-nav-height: 73px;
+
+    /* linear gradient for multicoloredl border-top */
+    --linear-gradient: linear-gradient(270deg,#fa1e32,#90f);
 }
 
 /* User Agent Stylesheet Reset */
@@ -141,18 +145,97 @@ button {
   margin: 0;
 }
 
+main input {
+  font-size: 1.25rem;
+  width: 100%;
+  max-width: 50rem;
+  display: block;
+  margin-bottom: 1rem;
+  padding: 0.75rem 0.6rem;    
+  border-radius: 0.25rem;
+  box-sizing: border-box;
+  border: 1px solid var(--text-color);
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+p, dl, ol, ul, pre, blockquote {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+code, pre, samp {
+  font-family: var(--fixed-font-family);
+  font-size: var(--body-font-size-s);
+}
+
+pre {
+  overflow: scroll;
+}
+
+main input:hover {
+  border: 1px solid var(--text-color);
+}
+
+main .section {
+  padding: 64px 16px;
+}
+
+@media (min-width: 600px) {
+  main .section {
+    padding: 64px 32px;
+  }  
+}
+
+
+main pre {
+  background-color: var(--overlay-background-color);
+  padding: 1em;
+  border-radius: .25em;
+  overflow-x: auto;
+  white-space: pre;
+}
+
+main blockquote {
+  font-style: italic;
+  margin: 3rem;
+  text-indent: -1rem;
+  hanging-punctuation: first;
+}
+
+main blockquote p::before {
+  content: "“";
+  line-height: 0;
+}
+
+main blockquote p::after {
+  content: "”";
+  line-height: 0;
+}
+
+hr {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  border: 0;
+  border-bottom: 1px solid var(--overlay-background-color);
+}
+
+main img {
+  max-width: 100%;
+  width: auto;
+  height: auto;
+}
+
+
+.section > div {
+  max-width: 1200px;
+  margin: auto;
+}
+
 /* progressive section appearance */
 main .section[data-section-status='loading'],
 main .section[data-section-status='initialized'] {
   display: none;
-}
-
-main .section-top-grid > div > div:nth-child(odd) img{
-  border-radius :90% 0 0;
-}
-
-main .section-top-grid > div > div:nth-child(even) img{
-  border-radius :0 90% 0 0;
 }
 
 main .cmp-button {
@@ -332,4 +415,94 @@ main .cmp-button-playbtn .cmp-button:hover {
   background-image: linear-gradient(270deg, #fa1e32, #90f);
   border: 0;
   transition: all .2s ease-in-out
+}
+
+.section-bottom > div img{
+  width : auto;
+}
+
+
+main .section-top-grid > div > div:nth-child(odd) img{
+  border-radius :90% 0 0;
+}
+
+main .section-top-grid > div > div:nth-child(even) img{
+  border-radius :0 90% 0 0;
+}
+
+main .section-top div > h1{
+  padding-top: 160px;
+}
+
+main .section-bottom .columns-2-cols{
+  padding: 130px;
+}
+
+main .section-bottom .columns-2-cols h1{
+  word-wrap: break-word;
+  font-weight: 300;
+  font-family: var(--body-font-family);
+  -webkit-text-fill-color: transparent;
+  background: var(--linear-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;  /* stylelint-disable property-no-vendor-prefix */
+  font-size: 128px;
+  border-image-slice: 1;
+  border-image-source: var(--linear-gradient);
+  border-top: 1px solid #e7e2da;
+}
+
+main .section-bottom-grid p picture{
+  display: block;
+  border-image-slice: 1;
+  border-image-source: var(--linear-gradient);
+  border-bottom: 1px solid #e7e2da;
+}
+
+main .section-top{
+  background-image: linear-gradient(#faf8f6,#fff);
+  position: relative;
+  z-index: 1;
+  padding-top:0px;
+}
+
+main .section-bottom{
+  background-image: linear-gradient(#faf8f6,#fff);
+  position: relative;
+  z-index: 1;
+}
+
+main .section-top::before{
+  background-image: url('./top-circle.svg');
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
+
+
+main .section-bottom::before{
+  background-image: linear-gradient(#faf8f6,#fff);
+  padding-bottom: 175px;
+  position: relative;
+  z-index: 1;
+}
+
+main .section-bottom::after{
+  background-image:url('./bottom-circle.svg');
+  background-position: bottom;
+  bottom: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  content: "";
+  height: 50%;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
 }
