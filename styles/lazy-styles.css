@@ -7,33 +7,135 @@
     font-display: swap;
 }
 
-@font-face{
-    font-family:"Alliance SemiBold";
-    src:url("/styles/fonts/Alliance/AllianceNo.1-SemiBold.woff2") format("woff2");
-    font-display: swap;
-
+@font-face {
+  font-family: "Source Serif4 Regular";
+  src: url("/styles/fonts/SourceSerif4/SourceSerif4-Regular.woff2") format("woff2");
+  font-display: swap;
 }
-
-@font-face{
-    font-family:"Source Serif4 Regular";
-    src:url("/styles/fonts/SourceSerif4/SourceSerif4-Regular.woff2") format("woff2");
-    font-display:swap;
-}
-
 
 /* || Alliance Font Family  */
-@font-face{
-    font-family:"Alliance Light";
-    src:url("/styles/fonts/Alliance/AllianceNo.1-Light.woff2") format("woff2");
-    font-display: swap;
+@font-face {
+  font-family: "Alliance Light";
+  src: url("/styles/fonts/Alliance/AllianceNo.1-Light.woff2") format("woff2");
+  font-display: swap;
 }
-@font-face{
-    font-family:"Alliance Regular";
-    src:url("/styles/fonts/Alliance/AllianceNo.1-Regular.woff2") format("woff2");
-    font-display: swap;
+
+@font-face {
+  font-family: "Alliance Regular";
+  src: url("/styles/fonts/Alliance/AllianceNo.1-Regular.woff2") format("woff2");
+  font-display: swap;
 }
-@font-face{
-    font-family:"Alliance Medium";
-    src:url("/styles/fonts/Alliance/AllianceNo.1-Medium.woff2") format("woff2");
-    font-display: swap;
+
+@font-face {
+  font-family: "Alliance Medium";
+  src: url("/styles/fonts/Alliance/AllianceNo.1-Medium.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Alliance SemiBold";
+  src: url("/styles/fonts/Alliance/AllianceNo.1-SemiBold.woff2") format("woff2");
+  font-display: swap;
+}
+
+main .cmp-modal {
+  display: none;
+  position: relative;
+  z-index: 99999;
+}
+
+main .cmp-modal.active {
+  display: block;
+}
+
+main .cmp-modal-backdrop {
+  background: var(--background-color-bone);
+  height: 100%;
+  left: 0;
+  opacity: .8;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 0;
+}
+
+main .cmp-modal-container {
+  left: 50%;
+  overflow: auto;
+  position: fixed;
+  top: 30%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+main .cmp-modal-heading {
+  display: block;
+}
+
+main .cmp-modal-heading .close {
+  background: url('../icons/close-button.svg') no-repeat;
+  border: 0;
+  cursor: pointer;
+  height: 40px;
+  margin-bottom: 1rem;
+  margin-left: 88%;
+  width: 40px;
+}
+
+main .cmp-modal-content {
+  border-radius: 6.64px;
+  height: auto;
+  width: auto;
+}
+
+main .cmp-modal-video {
+  border-radius: 6.64px;
+  height: 193px;
+  text-align: center;
+  width: 343.15px;
+}
+
+@media only screen and (min-width: 768px) {
+  main .cmp-modal-container {
+    top: 50%;
+  }
+
+  main .cmp-modal-heading .close {
+    margin-left: 94%;
+  }
+
+  main .cmp-modal-video {
+    border-radius: 20px;
+    height: 100%;
+    max-height: 500px;
+    width: 700px;
+  }
+}
+
+@media only screen and (min-width: 1140px) {
+  main .cmp-modal-heading .close {
+    margin-left: 96%;
+  }
+
+  main .cmp-modal-content,
+  main .cmp-modal-video {
+    border-radius: 20px;
+  }
+
+  main .cmp-modal-video {
+    max-height: 581px;
+    width: 1033px;
+  }
+}
+
+@media only screen and (min-width: 1280px) and (max-width: 1365px) {
+  main .cmp-modal-heading .close {
+    margin-left: 95%
+  }
+
+  main .cmp-modal-video {
+    max-height: 540px;
+    width: 980px
+  }
+
 }
