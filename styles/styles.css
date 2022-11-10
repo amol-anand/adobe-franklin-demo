@@ -41,9 +41,10 @@
   --heading-font-size-xs: 16px;
 
   /* nav height */
-  --nav-height: 64px;
+  --nav-height: 93px;
   --nav-height-mobile: 93px;
   --nav-height-mobile-section: 95px;
+  --sticky-nav-height: 73px;
 
 }
 
