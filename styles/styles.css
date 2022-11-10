@@ -45,6 +45,9 @@
   --nav-height-mobile: 93px;
   --nav-height-mobile-section: 95px;
 
+  /* linear gradient for multicoloredl border-top */
+  --linear-gradient: linear-gradient(270deg,#fa1e32,#90f);
+
 }
 
 body {
@@ -244,6 +247,10 @@ main .section.highlight {
   background-color: var(--highlight-background-color);
 }
 
+.section-bottom > div img{
+  width : auto;
+}
+
 
 main .section-top-grid > div > div:nth-child(odd) img{
   border-radius :90% 0 0;
@@ -252,3 +259,83 @@ main .section-top-grid > div > div:nth-child(odd) img{
 main .section-top-grid > div > div:nth-child(even) img{
   border-radius :0 90% 0 0;
 }
+
+main .section-top div > h1{
+  margin-top: 150px;
+}
+
+main .section-bottom .columns-2-cols h1{
+  word-wrap: break-word;
+  font-weight: 300;
+  font-family: var(--body-font-family);
+  -webkit-text-fill-color: transparent;
+  background: var(--linear-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;  /* stylelint-disable property-no-vendor-prefix */
+  font-size: 128px;
+  border-image-slice: 1;
+  border-image-source: var(--linear-gradient);
+  border-top: 1px solid #e7e2da;
+}
+
+main .section-bottom-grid p picture{
+  display: block;
+  border-image-slice: 1;
+  border-image-source: var(--linear-gradient);
+  border-bottom: 1px solid #e7e2da;
+}
+
+main .section-top, main .section-bottom
+{
+  background-image: linear-gradient(#faf8f6,#fff);
+  padding-bottom: 175px;
+  padding-top: 0;
+  position: relative;
+  z-index: 1;
+}
+
+main .section-top::before{
+  background-image: url('./top-circle.svg');
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
+
+main .section-top::after{
+  background-repeat:no-repeat;
+  background-size:cover;
+  content:"";
+  height:100%;
+  position:absolute;
+  width:100%;
+  z-index:-1;
+}
+
+main .section-bottom::before{
+  background-image: linear-gradient(#faf8f6,#fff);
+  padding-bottom: 175px;
+  padding-top: 0;
+  position: relative;
+  z-index: 1;
+}
+
+main .section-bottom::after{
+  background-image:url('./bottom-circle.svg');
+  background-position: bottom;
+  bottom: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  content: "";
+  height: 50%;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
+
