@@ -26,7 +26,7 @@ function resetLinkState() {
 // expands the links of the section clicked on
 function showLinks(e) {
   const sectionLinks = e.target.nextElementSibling;
-  hideLinks(sectionLinks);
+  hideActive(sectionLinks);
   sectionLinks.classList.toggle('active');
 }
 
@@ -36,6 +36,25 @@ function addContactLink(e) {
   const link = contactusheader.nextElementSibling.firstElementChild.href;
   window.open(link, '_self');
 }
+
+function buildMobileFooter() {
+  // adding the folding behavior to links in the footer
+  const mediaQuery = window.matchMedia('(max-width: 667px)');
+  if (mediaQuery.matches) {
+    const linkHeadings = document.querySelectorAll('.footer-links .link-section-heading');
+    linkHeadings.forEach((linkHeading) => {
+      if (linkHeading.id !== 'contact-us') {
+        linkHeading.classList.add('fold');
+        linkHeading.addEventListener('click', showLinks);
+      } else {
+        linkHeading.addEventListener('click', addLink);
+      }
+    });
+  } else {
+    resetActive();
+  }
+}
+
 
 export default async function decorate(block) {
   const cfg = readBlockConfig(block);
