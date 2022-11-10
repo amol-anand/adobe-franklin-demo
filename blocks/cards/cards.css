@@ -30,7 +30,7 @@
     object-fit: cover;
 }
 
-/*changes for news card */
+/* changes for news card */
 
 .cards.newscard>ul {
     list-style: none;
@@ -60,7 +60,6 @@
 }
 
 .cards.newscard .cards-card-body {
-
     width: auto;
 }
 
