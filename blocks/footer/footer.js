@@ -18,7 +18,7 @@ function hideLinks(sectionLinks) {
 // expands the links of the section clicked on
 function showLinks(e) {
   const sectionLinks = e.target.nextElementSibling;
-  hideActive(sectionLinks);
+  hideLinks(sectionLinks);
   sectionLinks.classList.toggle('active');
 }
 
@@ -29,24 +29,24 @@ function addContactLink(e) {
   window.open(link, '_self');
 }
 
-function buildMobileFooter() {
-  // adding the folding behavior to links in the footer
-  const mediaQuery = window.matchMedia('(max-width: 667px)');
-  if (mediaQuery.matches) {
-    const linkHeadings = document.querySelectorAll('.footer-links .link-section-heading');
-    linkHeadings.forEach((linkHeading) => {
-      if (linkHeading.id !== 'contact-us') {
-        linkHeading.classList.add('fold');
-        linkHeading.addEventListener('click', showLinks);
-      } else {
-        linkHeading.addEventListener('click', addLink);
-      }
-    });
-  } else {
-    resetActive();
-  }
+function addCSSToLinkHeadings() {
+  const h4elements = document.querySelectorAll('.footer-links > div > div > h4');
+  h4elements.forEach((h4element) => {
+    h4element.classList.add('link-section-heading');
+  });
 }
 
+function buildMobileFooter() {
+  const linkHeadings = document.querySelectorAll('.footer-links .link-section-heading');
+  linkHeadings.forEach((linkHeading) => {
+    if (linkHeading.id !== 'contact-us') {
+      linkHeading.classList.add('fold');
+      linkHeading.addEventListener('click', showLinks);
+    } else {
+      linkHeading.addEventListener('click', addContactLink);
+    }
+  });
+}
 
 export default async function decorate(block) {
   const cfg = readBlockConfig(block);
