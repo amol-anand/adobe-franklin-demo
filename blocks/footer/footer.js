@@ -15,14 +15,6 @@ function hideLinks(sectionLinks) {
   });
 }
 
-// resets the expanded state when view port changes
-function resetLinkState() {
-  const activeSections = document.querySelectorAll('.footer-links .active');
-  activeSections.forEach((activeSection) => {
-    activeSection.classList.remove('active');
-  });
-}
-
 // expands the links of the section clicked on
 function showLinks(e) {
   const sectionLinks = e.target.nextElementSibling;
@@ -63,27 +55,16 @@ export default async function decorate(block) {
   const footerPath = cfg.footer || '/footer';
   const resp = await fetch(`${footerPath}.plain.html`);
   const html = await resp.text();
-
-  const modifiedhtml = html.replaceAll('<h4', '<h4 class="link-section-heading"');
   const footer = document.createElement('div');
 
-  footer.innerHTML = modifiedhtml;
+  footer.innerHTML = html;
   await decorateIcons(footer);
   block.append(footer);
+  addCSSToLinkHeadings();
 
-  // code for links fold / unfold behavior
-  const mediaQuery = window.matchMedia('(max-width: 667px)');
-  if (mediaQuery.matches) {
-    const linkHeadings = document.querySelectorAll('.footer-links .link-section-heading');
-    linkHeadings.forEach((linkHeading) => {
-      if (linkHeading.id !== 'contact-us') {
-        linkHeading.classList.add('fold');
-        linkHeading.addEventListener('click', showLinks);
-      } else {
-        linkHeading.addEventListener('click', addContactLink);
-      }
-    });
-  } else {
-    resetLinkState();
+  // code for building mobile footer
+  const mobileMedia = window.matchMedia('(max-width: 667px)');
+  if (mobileMedia.matches) {
+    buildMobileFooter();
   }
 }
