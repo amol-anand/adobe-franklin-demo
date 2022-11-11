@@ -151,6 +151,8 @@
 
   /* Media queries */
 
+  /* || Begin Styles for screen sizes less than or equal to 667 px */
+
   @media screen and (max-width: 667px){
     footer .footer{
       margin-bottom: 0;
@@ -195,9 +197,17 @@
       margin-top: 22px;
       margin-bottom: 24px;
       font-weight: 300;
-      background: url('../../icons/arrow-down-white.svg') no-repeat right center;
+    
    }
    
+   footer .footer-links .fold {
+      background: url('../../icons/arrow-down-white.svg') no-repeat right center;
+   }
+
+   footer .footer-links .unfold {
+      background: url('../../icons/arrow-down-white.svg') no-repeat right center;
+   }
+
    footer .footer-links #follow-us , 
    footer .footer-links #contact-us > p {
     display: none;
@@ -273,3 +283,5 @@
   }
 
   }
+
+ /* || End Styles for screen sizes less than or equal to 667 px */

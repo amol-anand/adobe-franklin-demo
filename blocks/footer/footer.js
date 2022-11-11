@@ -5,7 +5,8 @@ import { readBlockConfig, decorateIcons } from '../../scripts/lib-franklin.js';
  * @param {Element} block The footer block element
  */
 
-function hideActive(sectionLinks) {
+// hides all the links except the one clicked on
+function hideLinks(sectionLinks) {
   const activeSections = document.querySelectorAll('.footer-links .active');
   activeSections.forEach((activeSection) => {
     if (activeSection !== sectionLinks) {
@@ -14,43 +15,27 @@ function hideActive(sectionLinks) {
   });
 }
 
-function resetActive() {
+// resets the expanded state when view port changes
+function resetLinkState() {
   const activeSections = document.querySelectorAll('.footer-links .active');
   activeSections.forEach((activeSection) => {
     activeSection.classList.remove('active');
   });
 }
 
+// expands the links of the section clicked on
 function showLinks(e) {
   const sectionLinks = e.target.nextElementSibling;
-  hideActive(sectionLinks);
+  hideLinks(sectionLinks);
   sectionLinks.classList.toggle('active');
 }
 
-function addLink() {
-  // hard coding for POC
-  const link = 'https://www.merative.com/contact';
+// adding contactus link
+function addContactLink(e) {
+  const contactusheader = e.target;
+  const link = contactusheader.nextElementSibling.firstElementChild.href;
   window.open(link, '_self');
 }
-
-function buildMobileFooter() {
-  // adding the folding behavior to links in the footer
-  const mediaQuery = window.matchMedia('(max-width: 667px)');
-  if (mediaQuery.matches) {
-    const linkHeadings = document.querySelectorAll('.footer-links .link-section-heading');
-    linkHeadings.forEach((linkHeading) => {
-      if (linkHeading.id !== 'contact-us') {
-        linkHeading.classList.add('fold');
-        linkHeading.addEventListener('click', showLinks);
-      } else {
-        linkHeading.addEventListener('click', addLink);
-      }
-    });
-  } else {
-    resetActive();
-  }
-}
-
 
 export default async function decorate(block) {
   const cfg = readBlockConfig(block);
@@ -67,5 +52,19 @@ export default async function decorate(block) {
   await decorateIcons(footer);
   block.append(footer);
 
-  window.addEventListener('resize', buildMobileFooter);
+  // code for links fold / unfold behavior
+  const mediaQuery = window.matchMedia('(max-width: 667px)');
+  if (mediaQuery.matches) {
+    const linkHeadings = document.querySelectorAll('.footer-links .link-section-heading');
+    linkHeadings.forEach((linkHeading) => {
+      if (linkHeading.id !== 'contact-us') {
+        linkHeading.classList.add('fold');
+        linkHeading.addEventListener('click', showLinks);
+      } else {
+        linkHeading.addEventListener('click', addContactLink);
+      }
+    });
+  } else {
+    resetLinkState();
+  }
 }
