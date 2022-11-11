@@ -527,6 +527,12 @@ main .section.what-we-do > .default-content-wrapper > h4 {
   margin-bottom: 32px;
 }   
 
+@media (max-width:599px) {
+  main .section.what-we-do {
+    min-height: 1400px;
+  }  
+}
+
 @media (min-width: 600px) {
   main .section.what-we-do {
     position: relative;
