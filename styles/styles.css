@@ -509,7 +509,7 @@ main .section-bottom::after{
 }
 
 /* What we do Section */
-main .section.what-we-do {
+main .section.what-we-do[data-section-status='loaded'] {
   position: relative;
   display: block;
 }
@@ -534,7 +534,7 @@ main .section.what-we-do > .default-content-wrapper > h4 {
 }
 
 @media (min-width: 600px) {
-  main .section.what-we-do {
+  main .section.what-we-do[data-section-status='loaded']  {
     position: relative;
     display: grid;
     grid-template-columns: 1fr 3fr;
