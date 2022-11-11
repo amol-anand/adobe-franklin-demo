@@ -3,28 +3,16 @@ import { lookupPages } from '../../scripts/scripts.js';
 function createCard(row, style) {
   const card = document.createElement('div');
   if (style) card.classList.add(style);
-
   const link = document.createElement('a');
   link.classList.add('teaser-link');
   link.href = row.path;
   if (row['teaser-link-text']) {
     link.innerText = row['teaser-link-text'];
   } else {
-    link.innerText = 'Explore Solution';
+    link.innerText = 'Explore Solutions';
   }
-
-  if (row['teaser-title']) {
-    card.innerHTML += `<h6>${row['teaser-title']}</h6>`;
-  } else {
-    card.innerHTML += `<h6>${row.title}</h6>`;
-  }
-
-  if (row['teaser-description']) {
-    card.innerHTML += `<p>${row['teaser-description']}</p>`;
-  } else {
-    card.innerHTML += `<p>${row.description}</p>`;
-  }
-
+  if (row.title) card.innerHTML += `<h6>${row.title}</h6>`;
+  if (row.description) card.innerHTML += `<p>${row.description}</p>`;
   card.append(link);
   return (card);
 }
