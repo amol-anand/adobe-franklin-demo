@@ -3,7 +3,7 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto auto auto auto auto auto;
-    gap: 25px 0px;
+    gap: 25px;
 }
 
 .teaser-list .teaser-card {
@@ -17,7 +17,7 @@
 }
 
 .teaser-list .teaser-card .teaser-title h6 {
-    font-family: 'Alliance Medium';
+    font-family: 'Alliance Medium', sans-serif;
     font-size: 21px;
     letter-spacing: .16px;
     line-height: 160%;
@@ -26,7 +26,7 @@
 
 .teaser-list .teaser-card .teaser-link {
     text-decoration: none;
-    font-family: 'Alliance Medium';
+    font-family: 'Alliance Medium', sans-serif;
     font-size: 16px;
     letter-spacing: .16px;
     line-height: 120%;
