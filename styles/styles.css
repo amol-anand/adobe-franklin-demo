@@ -439,6 +439,7 @@ main .section.what-we-do {
   max-width: 1200px;
   margin: 0 auto;
   gap: 50px 100px;
+  min-height: 860px;
 }
 
 main .section.what-we-do > .default-content-wrapper > h4 {
