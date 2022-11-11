@@ -12,6 +12,10 @@
     min-height: 200px;
 }
 
+.teaser-list .teaser-list-block {
+    min-height: 727px;
+}
+
 .teaser-list .teaser-card:last-child,
 .teaser-list .teaser-card:nth-last-of-type(-n+2):not(:nth-child(even)) {
     border-bottom: unset;

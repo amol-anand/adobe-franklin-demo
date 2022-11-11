@@ -442,6 +442,10 @@ main .section.what-we-do {
   min-height: 860px;
 }
 
+main .section.what-we-do > .default-content-wrapper {
+  min-height: 730px;
+}
+
 main .section.what-we-do > .default-content-wrapper > h4 {
   font-family: 'Alliance Medium', sans-serif;
   font-size: 14px;
