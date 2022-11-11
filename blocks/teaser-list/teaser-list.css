@@ -6,11 +6,6 @@
     gap: 50px 0px;
 }
 
-.teaser-list a {
-    margin: 0 1.5em;
-    position: relative;
-}
-
 .teaser-list .teaser-card {
     padding: 1em;
     border-bottom: 1px solid #e7e2da;
@@ -19,4 +14,22 @@
 .teaser-list .teaser-card:last-child,
 .teaser-list .teaser-card:nth-last-of-type(-n+2):not(:nth-child(even)) {
     border-bottom: unset;
+}
+
+.teaser-list .teaser-card .teaser-title h6 {
+    font-family: 'Alliance Medium';
+    font-size: 21px;
+    letter-spacing: .16px;
+    line-height: 160%;
+    color: #20201f;
+}
+
+.teaser-list .teaser-card .teaser-link {
+    text-decoration: none;
+    font-family: 'Alliance Medium';
+    font-size: 16px;
+    letter-spacing: .16px;
+    line-height: 120%;
+    border-bottom: 2px solid #90f;
+    color: #90f;
 }

@@ -434,11 +434,23 @@ main .section-top-grid > div > div:nth-child(even) img{
 main .section.what-we-do {
   position: relative;
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: auto;
   max-width: 1200px;
   margin: 0 auto;
   gap: 50px 50px;
 }
+
+main .section.what-we-do > .default-content-wrapper > h4 {
+  font-family: 'Alliance Medium';
+  font-size: 14px;
+  letter-spacing: 3.2px;
+  line-height: 120%;
+  color: #20201f;
+  margin-bottom: 32px;
+} 
+
+/* Section Top and Bottom */
 main .section-top div > h1{
   padding-top: 160px;
 }

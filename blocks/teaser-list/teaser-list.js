@@ -8,6 +8,7 @@ function createCard(row, style) {
   const link = document.createElement('a');
   link.classList.add('teaser-link');
   link.href = row.path;
+  link.innerText = 'Explore Solution';
 
   const title = document.createElement('div');
   title.classList.add('teaser-title');
