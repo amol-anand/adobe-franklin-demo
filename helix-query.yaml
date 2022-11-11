@@ -32,7 +32,7 @@ indices:
         value: parseTimestamp(attribute(el, "content"), "MM/DD/YYYY")
       teaser-title:
         select: head > title
-        value: attribute(el, "content")
+        value: textContent(el)
       teaser-description:
         select: head > meta[name="description"]
         value: attribute(el, "content")
