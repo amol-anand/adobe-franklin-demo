@@ -528,7 +528,7 @@ main .section.what-we-do > .default-content-wrapper > h4 {
 }   
 
 @media (max-width:599px) {
-  main .section.what-we-do {
+  main .section.what-we-do[data-section-status='loaded'] {
     min-height: 1400px;
   }  
 }
