@@ -9,6 +9,7 @@
 .teaser-list .teaser-card {
     padding: 1em;
     border-bottom: 1px solid #e7e2da;
+    min-height: 200px;
 }
 
 .teaser-list .teaser-card:last-child,
