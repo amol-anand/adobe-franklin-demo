@@ -30,12 +30,6 @@ indices:
       date:
         select: head > meta[name="publication-date"]
         value: parseTimestamp(attribute(el, "content"), "MM/DD/YYYY")
-      teaser-title:
-        select: head > title
-        value: textContent(el)
-      teaser-description:
-        select: head > meta[name="description"]
-        value: attribute(el, "content")
       teaser-link-text:
         select: head > meta[name="teaser-link-text"]
         value: attribute(el, "content")
