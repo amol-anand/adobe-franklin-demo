@@ -13,23 +13,19 @@ function createCard(row, style) {
     link.innerText = 'Explore Solution';
   }
 
-  const title = document.createElement('div');
-  title.classList.add('teaser-title');
   if (row['teaser-title']) {
-    title.innerHTML = `<h6>${row['teaser-title']}</h6>`;
+    card.innerHTML += `<h6>${row['teaser-title']}</h6>`;
   } else {
-    title.innerHTML = `<h6>${row.title}</h6>`;
+    card.innerHTML += `<h6>${row.title}</h6>`;
   }
 
-  const description = document.createElement('div');
-  description.classList.add('teaser-description');
   if (row['teaser-description']) {
-    description.innerHTML = `<p>${row['teaser-description']}</p>`;
+    card.innerHTML += `<p>${row['teaser-description']}</p>`;
   } else {
-    description.innerHTML = `<p>${row.description}</p>`;
+    card.innerHTML += `<p>${row.description}</p>`;
   }
 
-  card.prepend(title, description, link);
+  card.append(link);
   return (card);
 }
 

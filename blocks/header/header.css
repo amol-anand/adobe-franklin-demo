@@ -345,8 +345,8 @@ header nav .nav-sections>ul>li {
     width: 100vw;
     text-align: center;
     justify-items: center;
-    animation: fadeIn .25s;
-    animation-fill-mode: forwards;
+    /* animation: fadeIn .25s;
+    animation-fill-mode: forwards; */
     overflow: hidden;
     transition: top .5s ease-in;
     z-index: -1;

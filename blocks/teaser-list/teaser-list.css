@@ -16,7 +16,7 @@
     border-bottom: unset;
 }
 
-.teaser-list .teaser-card .teaser-title h6 {
+.teaser-list .teaser-card h6 {
     font-family: 'Alliance Medium', sans-serif;
     font-size: 21px;
     letter-spacing: .16px;
