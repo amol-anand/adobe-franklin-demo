@@ -3,7 +3,7 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto auto auto auto auto auto;
-    gap: 50px 0px;
+    gap: 25px 0px;
 }
 
 .teaser-list .teaser-card {

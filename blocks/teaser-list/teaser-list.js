@@ -8,15 +8,27 @@ function createCard(row, style) {
   const link = document.createElement('a');
   link.classList.add('teaser-link');
   link.href = row.path;
-  link.innerText = 'Explore Solution';
+  if(row['teaser-link-text']) {
+    link.innerText = row['teaser-link-text'];
+  } else {
+    link.innerText = 'Explore Solution';
+  }
 
   const title = document.createElement('div');
   title.classList.add('teaser-title');
-  title.innerHTML = `<h6>${row.title}</h6>`;
+  if(row['teaser-title']) {
+    title.innerHTML = `<h6>${row['teaser-title']}</h6>`;
+  } else {
+    title.innerHTML = `<h6>${row.title}</h6>`;
+  }
 
   const description = document.createElement('div');
   description.classList.add('teaser-description');
-  description.innerHTML = `<p>${row.description}</p>`;
+  if(row['teaser-description']) {
+    description.innerHTML = `<p>${row['teaser-description']}</p>`;
+  } else {
+    description.innerHTML = `<p>${row.description}</p>`;
+  }
 
   card.prepend(title, description, link);
   return (card);
