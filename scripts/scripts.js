@@ -27,6 +27,18 @@ function buildHeroBlock(main) {
   }
 }
 
+function buildCtaBlock(main) {
+  main.querySelectorAll(':scope > div').forEach((div) => {
+    const h2 = div.querySelector(':scope > h2');
+    const p = div.querySelector(':scope > p');
+    const a = div.querySelector(':scope p > a');
+    // eslint-disable-next-line no-bitwise
+    if (h2 && p && a && (h2.compareDocumentPosition(p) & Node.DOCUMENT_POSITION_FOLLOWING) && (p.compareDocumentPosition(a) & Node.DOCUMENT_POSITION_CONTAINED_BY)) {
+      div.classList.add('cta');
+    } 
+  });  
+}
+
 /**
  * Builds all synthetic blocks in a container element.
  * @param {Element} main The container element
@@ -34,6 +46,7 @@ function buildHeroBlock(main) {
 function buildAutoBlocks(main) {
   try {
     buildHeroBlock(main);
+    buildCtaBlock(main);
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error('Auto Blocking failed', error);
