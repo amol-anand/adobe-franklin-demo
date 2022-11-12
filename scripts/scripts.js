@@ -33,10 +33,12 @@ function buildCtaBlock(main) {
     const p = div.querySelector(':scope > p');
     const a = div.querySelector(':scope p > a');
     // eslint-disable-next-line no-bitwise
-    if (h2 && p && a && (h2.compareDocumentPosition(p) & Node.DOCUMENT_POSITION_FOLLOWING) && (p.compareDocumentPosition(a) & Node.DOCUMENT_POSITION_CONTAINED_BY)) {
+    if (h2 && p && a && (h2.compareDocumentPosition(p) & Node.DOCUMENT_POSITION_FOLLOWING)
+          // eslint-disable-next-line no-bitwise
+          && (p.compareDocumentPosition(a) & Node.DOCUMENT_POSITION_CONTAINED_BY)) {
       div.classList.add('cta');
-    } 
-  });  
+    }
+  });
 }
 
 /**
