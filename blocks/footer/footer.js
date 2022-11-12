@@ -67,4 +67,10 @@ export default async function decorate(block) {
   if (mobileMedia.matches) {
     buildMobileFooter();
   }
+  // when media size changes
+  mobileMedia.onchange = (e) => {
+    if (e.matches) {
+      buildMobileFooter();
+    }
+  };
 }
