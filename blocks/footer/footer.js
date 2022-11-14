@@ -6,8 +6,9 @@ import { readBlockConfig, decorateIcons } from '../../scripts/lib-franklin.js';
  */
 
 // hides all the links except the one clicked on
-function hideLinks(sectionLinks) {
-  const activeSections = document.querySelectorAll('.footer-links .active');
+function hideLinks(event, block) {
+  const activeSections = block.querySelectorAll('.footer-links .active');
+  const sectionLinks = event.target.nextElementSibling;
   activeSections.forEach((activeSection) => {
     if (activeSection !== sectionLinks) {
       activeSection.classList.remove('active');
@@ -16,9 +17,9 @@ function hideLinks(sectionLinks) {
 }
 
 // expands the links of the section clicked on
-function showLinks(e) {
-  const sectionLinks = e.target.nextElementSibling;
-  hideLinks(sectionLinks);
+function showLinks(event, block) {
+  const sectionLinks = event.target.nextElementSibling;
+  hideLinks(event, block);
   sectionLinks.classList.toggle('active');
 }
 
@@ -29,19 +30,19 @@ function addContactLink(e) {
   window.open(link, '_self');
 }
 
-function addCSSToLinkHeadings() {
-  const h4elements = document.querySelectorAll('.footer-links > div > div > h4');
+function addCSSToLinkHeadings(block) {
+  const h4elements = block.querySelectorAll('.footer-links > div > div > h4');
   h4elements.forEach((h4element) => {
     h4element.classList.add('link-section-heading');
   });
 }
 
-function buildMobileFooter() {
-  const linkHeadings = document.querySelectorAll('.footer-links .link-section-heading');
+function buildMobileFooter(block) {
+  const linkHeadings = block.querySelectorAll('.footer-links .link-section-heading');
   linkHeadings.forEach((linkHeading) => {
     if (linkHeading.id !== 'contact-us') {
       linkHeading.classList.add('fold');
-      linkHeading.addEventListener('click', showLinks);
+      linkHeading.addEventListener('click', (event) => { showLinks(event, block); });
     } else {
       linkHeading.addEventListener('click', addContactLink);
     }
@@ -60,17 +61,17 @@ export default async function decorate(block) {
   footer.innerHTML = html;
   await decorateIcons(footer);
   block.append(footer);
-  addCSSToLinkHeadings();
+  addCSSToLinkHeadings(block);
 
   // code for building mobile footer
   const mobileMedia = window.matchMedia('(max-width: 667px)');
   if (mobileMedia.matches) {
-    buildMobileFooter();
+    buildMobileFooter(block);
   }
   // when media size changes
   mobileMedia.onchange = (e) => {
     if (e.matches) {
-      buildMobileFooter();
+      buildMobileFooter(block);
     }
   };
 }
