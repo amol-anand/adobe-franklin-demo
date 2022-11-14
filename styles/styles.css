@@ -134,8 +134,20 @@ h1, h2 {
 }
 
 main {
-  margin-top: var(--nav-height-mobile);
+  padding-top: 92px;
   background-color: var(--background-color-bone);
+}
+
+@media only screen and (min-width: 768px) {
+  main {
+    padding-top: 93px;
+  }
+}
+
+@media only screen and (min-width: 1140px) {
+  main {
+    padding-top: 130px;
+  }
 }
 
 button {

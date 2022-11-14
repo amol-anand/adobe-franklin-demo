@@ -1,5 +1,9 @@
 /* block specific CSS goes here */
 
+main .section.hero-container {
+  padding: 0;
+}
+
 .hero-container {
   max-width: 1120px;
   background-color: var(--background-color-bone);
