@@ -68,7 +68,7 @@ export default async function decorate(block) {
           </button>
         </div>
         <div class="cmp-modal-content">
-          <video class="cmp-modal-video" autoPlay="" controls="" muted="" playsInline="" loop="" preload="auto">
+          <video class="cmp-modal-video" autoPlay="" controls="" muted="" playsInline="" loop="" preload="none">
             <source data-label="${cfg.name}" data-title="${cfg.name}"
                     src="${cfg.video}" type="video/mp4">
             <track src="" kind="subtitles" srcLang="en" label="English">
