@@ -527,13 +527,65 @@ main .section.what-we-do > .default-content-wrapper > h4 {
   margin-bottom: 32px;
 }   
 
+
+/* CTA Auto Block Section */
+main .section.cta[data-section-status='loaded'] {
+  position: relative;
+  display: block;
+}
+
+main .section.cta {
+  background-color: #e7e2da;
+  margin: unset;
+  text-align: center;
+  min-height: 291px;
+}
+
+main .section.cta > .default-content-wrapper > * {
+  padding-top: 1em;
+}
+
+/* CTA Button */
+main .section.cta > .default-content-wrapper > .button-container > a {
+  position:relative;
+  display: inline-block;
+  text-decoration: none;
+  background: #90f;
+  border-radius: 40px;
+  cursor: pointer;
+  min-height: 62px;
+  padding: 25px;
+  width: 240px;
+  font-family: 'Alliance Medium', sans-serif;
+  font-size: 16px;
+  letter-spacing: .16px;
+  line-height: 120%;
+  color: #fff;
+  text-align: left;
+}
+
+main .section.cta > .default-content-wrapper > .button-container > a::before {
+  content: '';
+  position: absolute;
+  right: 10%;
+  width: 24px;
+  height: 22px;
+  background: url('../icons/arrow-white.svg') no-repeat right center;
+}
+
+main .section.cta > .default-content-wrapper > .button-container > a:hover {
+  background: linear-gradient(270deg, #fa1e32, #90f);
+}
+
 @media (max-width:599px) {
+  /* What we do Section */
   main .section.what-we-do[data-section-status='loaded'] {
     min-height: 1400px;
   }  
 }
 
 @media (min-width: 600px) {
+  /* What we do Section */
   main .section.what-we-do[data-section-status='loaded']  {
     position: relative;
     display: grid;
@@ -549,3 +601,4 @@ main .section.what-we-do > .default-content-wrapper > h4 {
     min-height: 730px;
   }
 }
+
