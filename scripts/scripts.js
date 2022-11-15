@@ -62,9 +62,9 @@ function buildBackToTopBlock(main) {
   // add click listener
   backToTop.addEventListener('click', () => {
     window.scroll({
-      top: 0, 
-      left: 0, 
-      behavior: 'smooth'
+      top: 0,
+      left: 0,
+      behavior: 'smooth',
     });
   });
 }
