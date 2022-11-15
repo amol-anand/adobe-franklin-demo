@@ -43,6 +43,32 @@ function buildCtaBlock(main) {
   });
 }
 
+function buildBackToTopBlock(main) {
+  const element = document.createElement('div');
+  element.classList.add('back-to-top');
+  main.append(element);
+
+  const backToTop = main.querySelector(':scope > div.back-to-top');
+  // add scroll listener
+  window.addEventListener('scroll', () => {
+    const scrollAmount = window.scrollY;
+    if (scrollAmount > 100) {
+      backToTop.classList.add('active');
+    } else {
+      backToTop.classList.remove('active');
+    }
+  });
+
+  // add click listener
+  backToTop.addEventListener('click', () => {
+    window.scroll({
+      top: 0, 
+      left: 0, 
+      behavior: 'smooth'
+    });
+  });
+}
+
 /**
  * Builds all synthetic blocks in a container element.
  * @param {Element} main The container element
@@ -51,6 +77,7 @@ function buildAutoBlocks(main) {
   try {
     buildHeroBlock(main);
     buildCtaBlock(main);
+    buildBackToTopBlock(main);
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error('Auto Blocking failed', error);
